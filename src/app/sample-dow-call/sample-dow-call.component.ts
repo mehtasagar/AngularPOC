@@ -5,6 +5,7 @@ import { LegModal } from '../modal/legModal';
 import { GenericWebService } from '../generic-web-service/generic.web.service';
 
 import 'rxjs/add/observable/throw'; //Todd, added this and fixed  'Observable_1.Observable.throw is not a function at CatchSubscriber.selector'
+//test comment
 
 @Component({
   selector: 'fedex-sample-dow-call',
