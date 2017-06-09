@@ -1,0 +1,41 @@
+
+<!-- One Repo Info -->
+
+<br/><br/>
+<!-- SAMPLE COOL GEN -->
+<div class="panel panel-primary" style="width: 1000px;">
+  <div class="panel-heading">Webpage Invoking CoolGen</div>
+  <div class="panel-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <img src="src/app/sample-cool-gen/outboundProjection.jpg" alt="Outbound Projections" />
+        </div> 
+ 
+        <div class="col-md-4">  
+          <br/><br/>
+          <button class="buttonStyle" (click)="callCoolGenPRE(coolGenTmpOrig.value,coolGenTmpDate.value,coolGenTmpSeq.value)">PRE</button>&nbsp;&nbsp;
+          <button class="buttonStyle" (click)="callCoolGenPEND(coolGenTmpOrig.value,coolGenTmpDate.value,coolGenTmpSeq.value)">PEND</button>&nbsp;
+          <button class="buttonStyle" (click)="callCoolGenDISP(coolGenTmpOrig.value,coolGenTmpDate.value,coolGenTmpSeq.value)">DISP</button>&nbsp;
+          <button class="buttonStyle" (click)="callCoolGenVIEW(coolGenTmpOrig.value,coolGenTmpDate.value,coolGenTmpSeq.value)">VIEW</button>&nbsp;
+          <br/><br/>
+
+          <output type="text" class="boldStyle" style="width: 120px;">Origin</output><input type="text" #coolGenTmpOrig [ngModel]="coolGenOrigin" style="width: 50px;">
+          <br/><br/>
+          <output type="text" class="boldStyle" style="width: 120px;">Date (yyyymmdd)</output><input type="text" #coolGenTmpDate [ngModel]="coolGenDate" style="width: 100px;">
+          <br/><br/>
+          <output type="text" class="boldStyle" style="width: 120px;">Sequence</output><input type="text" #coolGenTmpSeq [ngModel]="coolGenSeq" style="width: 40px;">
+          <br/>
+          <br/>
+
+          <br/>
+          <div class="alert alert-success">{{errorMessageCoolGen}}</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  

@@ -1,0 +1,24 @@
+.sebm-google-map-container {
+  height: 300px;
+  width: 700px;
+}
+
+.colorRed {
+    color:red;    
+}
+.colorBlue {
+    color:blue;    
+}
+
+
+.buttonStyle {
+	font-size: 12px;
+	color: white;
+	background-color: #4F2D87;
+}
+.boldStyle {
+	font-weight: bold;
+  background-color:yellowgreen;
+}
+
+

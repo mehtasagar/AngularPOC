@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+      <a class="navbar-brand" rel="home" href="#" title="FedEx Rocks!">
+       <img     src="src/app/navbar/header.png" style="margin-left:-1px;" >
+      </a>
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="['/']">Linehaul</a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/about']">About</a></li>        
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/sampleCoolgen']">Sample Coolgen</a></li>        
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/sampleDow']">Sample DOW</a></li>        
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+
+    </div>
+
+
+
+  </div>
+</nav>

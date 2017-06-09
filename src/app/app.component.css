@@ -1,0 +1,19 @@
+.main-header {
+ padding: 3px;
+	border-style: solid;
+	/*width: 1224px;*/
+	width: 1400px;
+	height: 60px;
+	border-width: 1px;
+	border-color: #4F2D87;
+	background-color: #4F2D87;
+	background-image:  url('./navbar/header.png');
+	background-repeat: no-repeat;
+	clear: both;
+}
+
+
+.boldStyle {
+	font-weight: bold;
+  background-color:yellowgreen;
+}
