@@ -4,3 +4,39 @@
 <button class="buttonStyle" (click)="callGetLegs()">DOW - Get Legs</button>&nbsp;        
 
 </p>
+
+<div *ngIf="legs.length>0">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+<thead>
+  <tr>
+    <th>ID</th>
+    <th> RTE_CD </th>
+    <th>EFF_DT</th>
+    <th>EXPR_DT</th>
+    <th>LEG_TM_NBR</th>
+    <th>LEG_MILE_NBR</th>
+    <th>AVG_MPH_NB</th>
+    <th>LEG_DESC</th>
+    <th>ORIG_CTR_CD</th>
+    <th>DEST_CTR_CD</th>
+   
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let leg of legs">
+    <td>{{ leg.dispatch_leg_id }}</td>
+    <td>{{ leg.rte_cd}}</td>
+    <td>{{leg.eff_dt}}</td>
+    <td>{{leg.expr_dt}}</td>
+    <td>{{leg.leg_tm_nbr}}</td>
+    <td>{{leg.leg_mile_nbr}}</td>
+    <td>{{avg_mph_nb}}</td>
+    <td>{{leg.leg_desc}}</td>
+    <td>{{leg.orig_ctr_cd}}</td>
+    <td>{{leg.dest_ctr_cd}}</td>
+  
+  </tr>
+</tbody>
+</table>
+
+</div>

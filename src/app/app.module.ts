@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { GenericWebService } from './generic-web-service/generic.web.service';
 
+import { DataTablesModule } from 'angular-datatables';
 
 import { WebService } from './web.service';
 import {RouterModule} from "@angular/router";
@@ -35,6 +36,7 @@ import { SampleDowCallComponent } from './sample-dow-call/sample-dow-call.compon
     BrowserModule,
     FormsModule,
     HttpModule,
+    DataTablesModule,
     routes    
   ],
   providers: [WebService,GenericWebService],

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { LegModal } from '../modal/legModal';
 import { GenericWebService } from '../generic-web-service/generic.web.service';
+import { Subject } from 'rxjs/Rx';
 
 import 'rxjs/add/observable/throw'; //Todd, added this and fixed  'Observable_1.Observable.throw is not a function at CatchSubscriber.selector'
 //test comment
@@ -15,12 +16,19 @@ import 'rxjs/add/observable/throw'; //Todd, added this and fixed  'Observable_1.
 })
 export class SampleDowCallComponent {
   public legs: LegModal[] = [];
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
+
   constructor(private router: Router, private webSvcCall: GenericWebService, private route: ActivatedRoute) {
 
   }
 
 
   ngOnInit() {
+     this.dtOptions = {
+      pagingType: 'full_numbers',
+   
+    };
   }
 
 
@@ -35,9 +43,12 @@ export class SampleDowCallComponent {
 
     //this.github.callLocalSpringBoot("http://localhost:8083/leg/DEN/COS").subscribe(p => {
     this.webSvcCall.callDowGetLegs("http://c0003093.test.cloud.fedex.com:8083/leg/COS/DEN").subscribe(p => {
+      
       console.log("p=" + p);
       this.legs = p;
       console.log("Todd test map to leg=" + p[0]);
+      this.dtTrigger.next();
+
     });
 
   }
