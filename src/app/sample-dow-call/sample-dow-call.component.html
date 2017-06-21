@@ -6,11 +6,60 @@
 </p>
 
 <div *ngIf="legs.length>0">
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <data-table id="data-table"
+    [items]="legs "
+    [itemCount]="itemCount"
+    (reload)="reloadData($event)"
+    [limit]="4"
+    [substituteRows]="false"
+     [indexColumnHeader]="'#'"
+  >
+    <data-table-column
+      [property]="'dispatch_leg_id'"
+      [header]="'Id'"
+      [sortable]="true">
+    </data-table-column>
+
+    <data-table-column
+      [property]="'rte_cd'"
+      [header]="'RTE_CD'"
+      [sortable]="true">
+      <template #dataTableHeader let-item="item">
+        RTE_CD
+       
+        <input type="number"  [(ngModel)]='search'  (keyup.enter)="filtered($event,search,legs)" class="form-control input-sm" style="width: 75px"/>
+      </template>
+    </data-table-column>
+    <data-table-column
+      [property]="'leg_desc'"
+      [header]="'LEG_DESC'"
+      [sortable]="false">
+    </data-table-column>
+     <data-table-column
+      [property]="'eff_dt'"
+      [header]="'EFF_DT'"
+      [sortable]="false">
+        <template #dataTableCell let-item="item">
+                <span>{{item.eff_dt | date:'yyyy-MM-dd'}}</span>
+            </template>
+    </data-table-column>
+  <data-table-column
+      [property]="'orig_ctr_cd'"
+      [header]="'ORIG_CTR_CD'"
+      [sortable]="false">
+    </data-table-column>
+ 
+   <data-table-column
+      [property]="'dest_ctr_cd'"
+      [header]="'DEST_CTR_CD'"
+      [sortable]="false">
+    </data-table-column>
+  </data-table>
+<!--<table class=" table table-bordered row-border hover">
 <thead>
   <tr>
     <th>ID</th>
-    <th> RTE_CD </th>
+    <th>RTE_CD</th>
     <th>EFF_DT</th>
     <th>EXPR_DT</th>
     <th>LEG_TM_NBR</th>
@@ -37,6 +86,6 @@
   
   </tr>
 </tbody>
-</table>
+</table>-->
 
 </div>
