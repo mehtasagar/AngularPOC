@@ -62,11 +62,7 @@ export class SampleDowCallComponent {
     }
    
   filtered(params,val: string,legs:LegModal[]){
-   // alert(val);
-   // var l:LegModal[]= this.legs;
-  //  console.log(l) ;
-   //  l.filter(leg=>leg.rte_cd===val);
-   //let myfunct: (l:LegModal[])=> boolean = function (l:LegModal[]): boolean {
+  
      var l: LegModal[]=[];
     for(let leg of legs){
       if(leg.rte_cd==val){
